@@ -1,0 +1,39 @@
+@model Filmoteca.Models.Filme
+
+@{
+    ViewData["Title"] = "Novo Filme";
+}
+
+<h1>Novo Filme</h1>
+<form asp-action="Create" class="col-md-6">
+    <div class="mb-3">
+        <label asp-for="Titulo" class="form-label"></label>
+        <input asp-for="Titulo" class="form-control"/>
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Genero" class="form-label"></label>
+        <input asp-for="Genero" class="form-control"/>
+        <span asp-validation-for="Genero" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Ano" class="form-label"></label>
+        <input asp-for="Ano" class="form-control"/>
+        <span asp-validation-for="Ano" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Duracao" class="form-label"></label>
+        <input asp-for="Duracao" class="form-control"/>
+        <span asp-validation-for="Duracao" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Diretor" class="form-label"></label>
+        <input asp-for="Diretor" class="form-control"/>
+        <span asp-validation-for="Diretor" class="text-danger"></span>
+    </div>
+    <buttom type="subimit" class="btn btn-sucess">Salvar</button>
+    <a asp-action="Index" class="btn btn-sucess">Voltar</a>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}
