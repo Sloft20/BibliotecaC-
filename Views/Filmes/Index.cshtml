@@ -1,0 +1,40 @@
+@model IEnumerable<Filmoteca.Models.Filme>
+
+@{
+    ViewData["Title"] = "Filmes";
+}
+<h1>Filmes</h1>
+
+<p><a asp-action="Create" class="btn btn-primary">Novo Filme</a></p>
+
+@if(!Model.Any())
+{
+    <p>Nenhum Filme Cadastrado Ainda.</p>
+
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>TÍtulo</th>
+                <th>Gênero</th>
+                <th>Ano</th>
+                <th>Duração(min)</th>
+                <th>Diretor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var filme in Model)
+            {
+                <tr>
+                    <td>@filme.Titulo</td>
+                    <td>@filme.Genero</td>
+                    <td>@filme.Ano</td>
+                    <td>@filme.Duracao</td>
+                    <td>@filme.Diretor</td>
+                </tr> 
+            }   
+        </tbody>
+    </table>    
+}
